@@ -122,3 +122,33 @@ a:focus {
 	margin-top: 100px;
 	margin-bottom: 100px;
 }
+
+
+.btn {
+	border-radius: 0;
+	text-transform: uppercase;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.btn-default {
+	border: 2px solid red;
+	color: #fff;
+	background-color: red;
+	opacity: .4
+}
+
+.btn-default:hover,
+.btn-default:focus {
+	border: 2px solid red;
+	color: red;
+	background-color: transparent;
+}
+
+.banner-social-buttons li {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
