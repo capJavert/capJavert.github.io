@@ -9,7 +9,7 @@ body {
 	padding: 0;
 	font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	color: #222;
-	background-color: #eee;
+	background-color: #fefefe;
 }
 
 h1,
@@ -49,7 +49,6 @@ p {
 	height: 5px;
 	width: 10%;
 	float: left;
-	opacity: .4;
 }
 
 .skill-box {
@@ -77,7 +76,7 @@ p {
 }
 
 .red {
-	background: red;
+	background: #ff7b7b;
 }
 
 .blue {
@@ -114,8 +113,7 @@ a:focus {
 }
 
 .highlight {
-	color:red;
-	opacity: .4
+	color:#ff7b7b;
 }
 
 .content-section {
@@ -135,20 +133,30 @@ a:focus {
 }
 
 .btn-default {
-	border: 2px solid red;
+	border: 2px solid #ff7b7b;
 	color: #fff;
-	background-color: red;
-	opacity: .4
+	background-color: #ff7b7b;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-	border: 2px solid red;
-	color: red;
+	border: 2px solid #ff7b7b;
+	color: #ff7b7b;
 	background-color: transparent;
 }
 
 .banner-social-buttons li {
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+.btn-thumb {
+    line-height: 30px;
+}
+
+.btn-thumb img {
+    margin-top: -3px;
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
 }
