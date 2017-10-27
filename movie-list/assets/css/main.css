@@ -146,6 +146,16 @@ body {
 	padding: 0;
 }
 
+#login-area {
+	width: 100%;
+	text-align: center;
+	margin: 30px auto 0 auto;
+}
+
+#login-area img {
+    cursor: pointer;
+}
+
 button {
 	margin: 0;
 	padding: 0;
@@ -513,16 +523,13 @@ html .clear-completed:active {
 
 /* Center the loader */
 #loader {
-	position: absolute;
-	left: 50%;
-	top: 50%;
+	margin: 20px auto;
 	z-index: 1;
-	margin: -75px 0 0 -75px;
 	border: 16px solid #f3f3f3;
 	border-radius: 50%;
-	border-top: 16px solid #3498db;
-	width: 120px;
-	height: 120px;
+	border-top: 16px solid rgba(175, 47, 47, 0.15);
+	width: 40px;
+	height: 40px;
 	-webkit-animation: spin 2s linear infinite;
 	animation: spin 2s linear infinite;
 }
@@ -554,9 +561,4 @@ html .clear-completed:active {
 @keyframes animatebottom {
 	from{ bottom:-100px; opacity:0 }
 	to{ bottom:0; opacity:1 }
-}
-
-#myDiv {
-	display: none;
-	text-align: center;
 }
