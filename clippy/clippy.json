@@ -6,9 +6,15 @@
   "stackoverflow":"Need help? You could have just asked me...",
   "localhost":"It works! Good job!",
   "twitter":"Tweets can only be 280 characters long!",
-  "github": "Need lessons in python?",
-  "quora": "????????????????",
-  "piratebay": "You know you can get in trouble for this?",
+  "github": "Need lessons in Python?",
+  "quora": [
+  	"????????????????",
+  	"What is my purpose?"
+  ],
+  "piratebay": [
+  	"You know you can get in trouble for this?",
+  	"Ahooooy captain, a big torrent abroad!"
+  ],
   "netflix": "Netflix and chill?",
   "popcorn": "I think you are spending too much time in front of the computer...",
   "youtube": "Procrastinating again? Are you at work?",
@@ -29,6 +35,7 @@
   "spotify": "Did we just teleport to America?",
   "reddit": [
     "I think these guys need a serious redesign!!",
-    "I will never get this... Hmmmmhm..."
+    "I will never get this... Hmmmmhm...",
+    "Have you read it?"
   ]
 }
