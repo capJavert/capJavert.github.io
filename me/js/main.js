@@ -1,20 +1,59 @@
-$('#beta-signup-form').on('submit', function(e) {
-		e.preventDefault();
-	
-		$.ajax({
-			url: "beta-signup.php",
-			method: "GET",
-			data: { email : $('#email').val() },
-			dataType: "html",
-			success: function(data) {
-				if(data=="1") {
-					$('#beta-signup-form').parent().html("<h3>Sign up complete, thanks!</h3>");
-				} else {
-					$('#email').addClass('error');
-				}
-			},
-			 error: function(jqXHR, textStatus, errorThrown) { 
-	        	console.log(textStatus, errorThrown);
-	    	}	
-		});
-});
+var apps = {}
+var apiUrl = 'https://api.kickass.website'
+function endpoint(path) {
+	return apiUrl + path
+}
+
+apps.me = new Vue({
+	el: '.wrapper',
+	data: {
+		title: null,
+		titleMarkup: null,
+		about: '',
+		cv: null,
+		skills: [],
+		social: []
+	},
+	methods: {
+		breakLabel: function(label) {
+			return label.split(' ').join('<br/>')
+		}
+	},
+	created: function() {
+		var vm = this
+
+		fetch(endpoint('/pages/me'))
+			.then(function(res) {
+				return res.json()
+			})
+			.then(function(data) {
+				vm.title = data.title
+				vm.titleMarkup = data.titleMarkup
+			})
+
+		fetch(endpoint('/me'))
+			.then(function(res) {
+				return res.json()
+			})
+			.then(function(data) {
+				vm.about = data.about,
+				vm.cv = data.cv
+			})
+
+		fetch(endpoint('/skills'))
+			.then(function(res) {
+				return res.json()
+			})
+			.then(function(data) {
+				vm.skills = data
+			})
+
+		fetch(endpoint('/social'))
+			.then(function(res) {
+				return res.json()
+			})
+			.then(function(data) {
+				vm.social = data
+			})
+	}
+})

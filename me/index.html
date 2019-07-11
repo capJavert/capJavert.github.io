@@ -30,6 +30,8 @@
     <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <script src="js/vue.min.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -42,124 +44,65 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
           type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
 
-<div class="top-line">
-    <div class="color-swatch swatch-100 red"></div>
+<div class="wrapper">
+    <div class="top-line">
+        <div class="color-swatch swatch-100 red"></div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1 v-if="titleMarkup" v-html="titleMarkup"></h1>
+                <h1 v-else>Hello <span class="highlight">world</span></h1>
+                <p v-if="about">{{about}}</p>
+                <p v-else>I am young, hard working developer and artist, probably not that much freaky movie freak and passionate runner hailing from Croatia. My skills vary between many aspects of software design and development, also I am no stranger to graphic design and drawing. I am currently a student at Faculty of Organization and Informatics but I am always excited about new projects and chance to further more expand my experience.</p>
+                <p>
+                    <a v-if="cv" target="_blank" class="btn btn-default btn-lg btn-thumb" :href="cv">
+                        <i><img class="img-circle" src="https://avatars0.githubusercontent.com/u/9803078?v=4&u=1c51db45f535cc563b4ef7f923d09a1d78eda358&s=400" alt="" /></i>
+                        <span>Download CV</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- what i do -->
+    <section id="skills" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Skill<span class="highlight">z</span></h2>
+                <a v-for="item in skills" v-bind:key="item.id" target="_blank" :href="item.url">
+                    <div class="col-sm-2 skill-box">
+                        <span v-html="breakLabel(item.title)" class="skill-text"></span>
+                        <div :class="'devicons devicons-' + item.name"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Follow Section -->
+    <section id="follow" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Find me on social <span class="highlight">media</span></h2>
+                <ul class="list-inline banner-social-buttons">
+                    <li v-for="item in social">
+                        <a target="_blank" :href="item.url" class="btn btn-default btn-lg"><i
+                                :class="'fa fa-' + item.network + ' fa-fw'"></i> <span class="network-name">{{item.name}}</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </div>
 
-<!-- About Section -->
-<section id="about" class="container content-section text-center">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-            <h1>Hello <span class="highlight">world</span></h1>
-            <p>I am young, hard working developer and artist, probably not that much freaky movie freak and passionate runner hailing from Croatia. My skills vary between many aspects of software design and development, also I am no stranger to graphic design and drawing. I am currently a student at Faculty of Organization and Informatics but I am always excited about new projects and chance to further more expand my experience.</p>
-            <p>
-                <a target="_blank" class="btn btn-default btn-lg btn-thumb" href="https://drive.google.com/file/d/1ljV6DaFWrKqr-Oo0HVcPpZ75A3LVwEqH">
-                    <i><img class="img-circle" src="https://avatars0.githubusercontent.com/u/9803078?v=4&u=1c51db45f535cc563b4ef7f923d09a1d78eda358&s=400" alt="" /></i>
-                    <span>Download CV</span>
-                </a>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- what i do -->
-<section id="skills" class="container content-section text-center">
-    <div class="row">
-        <div class="col-lg-12">
-            <h2>Skill<span class="highlight">z</span></h2>
-            <a target="_blank" href="https://github.com/capJavert?utf8=%E2%9C%93&tab=repositories&q=&type=&language=php">
-                <div class="col-sm-2 skill-box">
-                    <span class="skill-text">PHP<br />projects</span>
-                    <div class="devicons devicons-php"></div>
-                </div>
-            </a>
-            <a target="_blank" href="https://github.com/capJavert?utf8=%E2%9C%93&tab=repositories&q=&type=&language=python">
-                <div class="col-sm-2 skill-box">
-                    <span class="skill-text">Python<br />projects</span>
-                    <div class="devicons devicons-python"></div>
-                </div>
-            </a>
-            <a target="_blank" href="https://github.com/capJavert?utf8=%E2%9C%93&tab=repositories&q=&type=&language=javascript">
-                <div class="col-sm-2 skill-box">
-                    <span class="skill-text">JavaScript<br />projects</span>
-                    <div class="devicons devicons-javascript"></div>
-                </div>
-            </a>
-            <a target="_blank" href="https://github.com/capJavert?utf8=%E2%9C%93&tab=repositories&q=&type=&language=css">
-                <div class="col-sm-2 skill-box">
-                    <span class="skill-text">HTML5<br />projects</span>
-                    <div class="devicons devicons-html5"></div>
-                </div>
-            </a>
-            <!--<a target="_blank" href="https://github.com/capJavert?utf8=%E2%9C%93&tab=repositories&q=&type=&language=swift">
-                <div class="col-sm-2 skill-box">
-                    <span class="skill-text">iOS+Swift<br />projects</span>
-                    <div class="devicons devicons-swift"></div>
-                </div>
-            </a>-->
-            <a target="_blank" href="https://github.com/capJavert?utf8=%E2%9C%93&tab=repositories">
-                <div class="col-sm-2 skill-box">
-                    <span class="skill-text">All<br />projects</span>
-                    <div class="devicons devicons-code"></div>
-                </div>
-            </a>
-
-        </div>
-    </div>
-</section>
-
-<!-- Follow Section -->
-<section id="follow" class="container content-section text-center">
-    <div class="row">
-        <div class="col-lg-12">
-            <h2>Find me on social <span class="highlight">media</span></h2>
-            <ul class="list-inline banner-social-buttons">
-                <li>
-                    <a target="_blank" href="https://twitter.com/capJavert" class="btn btn-default btn-lg"><i
-                            class="fa fa-twitter fa-fw"></i> <span class="network-name">capJavert</span></a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://twitter.com/InsomniaAB" class="btn btn-default btn-lg"><i
-                            class="fa fa-twitter fa-fw"></i> <span class="network-name">Insomnia</span></a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://github.com/capJavert/" class="btn btn-default btn-lg"><i
-                            class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://medium.com/@capJavert/" class="btn btn-default btn-lg"><i
-                            class="fa fa-medium fa-fw"></i> <span class="network-name">Blog</span></a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.linkedin.com/in/ante-barić-1a820898" class="btn btn-default btn-lg"><i
-                            class="fa fa-linkedin-square fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
 <script src="js/main.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="js/jquery.easing.min.js"></script>
 
 <!-- Google Analytics -->
 <script>
