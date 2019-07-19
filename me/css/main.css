@@ -179,6 +179,7 @@ a:visited {
 	border: 2px solid #ff7b7b;
 	color: #fff;
 	background-color: #ff7b7b;
+	min-width: 230px;
 }
 
 .btn-default:hover,
@@ -202,4 +203,18 @@ a:visited {
     width: 29px;
     height: 29px;
     margin-right: 10px;
+}
+
+.contact-buttons .btn-default {
+	margin: 0 10px;
+}
+
+@media all and (max-width: 600px) {
+	.contact-buttons .btn-default {
+		margin: 10px;
+	}
+}
+
+.btn-hi span {
+	padding: 0 50px;
 }

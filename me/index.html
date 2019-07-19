@@ -61,10 +61,14 @@
                 <h1 v-else>Hello <span class="highlight">world</span></h1>
                 <p v-if="about">{{about}}</p>
                 <p v-else>I am young, hard working developer and artist, probably not that much freaky movie freak and passionate runner hailing from Croatia. My skills vary between many aspects of software design and development, also I am no stranger to graphic design and drawing. I am currently a student at Faculty of Organization and Informatics but I am always excited about new projects and chance to further more expand my experience.</p>
-                <p>
+                <p class="contact-buttons">
                     <a v-if="cv" target="_blank" class="btn btn-default btn-lg btn-thumb" :href="cv">
                         <i><img class="img-circle" src="https://avatars0.githubusercontent.com/u/9803078?v=4&u=1c51db45f535cc563b4ef7f923d09a1d78eda358&s=400" alt="" /></i>
                         <span>Download CV</span>
+                    </a>
+                    <a v-if="email" class="btn btn-default btn-lg btn-thumb btn-hi" :href="'mailto:' + email">
+                        <i class="fa fa-envelope"></i>
+                        <span>Say Hi</span>
                     </a>
                 </p>
             </div>

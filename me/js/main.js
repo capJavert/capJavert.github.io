@@ -11,6 +11,7 @@ apps.me = new Vue({
 		titleMarkup: null,
 		about: '',
 		cv: null,
+		email: null,
 		skills: [],
 		social: []
 	},
@@ -37,7 +38,8 @@ apps.me = new Vue({
 			})
 			.then(function(data) {
 				vm.about = data.about,
-				vm.cv = data.cv
+				vm.cv = data.cv,
+				vm.email = data.email.replace('@', '+contact@')
 			})
 
 		fetch(endpoint('/skills'))
