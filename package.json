@@ -1,0 +1,26 @@
+{
+    "name": "kickass.website",
+    "version": "1.0.0",
+    "description": "Personal homepage",
+    "main": "index.html",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5"
+    },
+    "scripts": {
+        "build-js": "babel me/js/** --ignore **/*.min.js -o me/js/main.min.js --minified",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/capJavert/capjavert.github.io.git"
+    },
+    "author": "capJavert",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/capJavert/capjavert.github.io/issues"
+    },
+    "homepage": "https://kickass.website"
+}
