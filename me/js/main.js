@@ -37,9 +37,9 @@ apps.me = new Vue({
 				return res.json()
 			})
 			.then(function(data) {
-				vm.about = data.about,
-				vm.cv = data.cv,
-				vm.email = data.email.replace('@', '+contact@')
+				vm.about = data.about
+				vm.cv = data.cv
+				vm.email = data.email
 			})
 
 		fetch(endpoint('/skills'))
