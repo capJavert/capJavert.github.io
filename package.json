@@ -22,5 +22,8 @@
     "bugs": {
         "url": "https://github.com/capJavert/capjavert.github.io/issues"
     },
-    "homepage": "https://kickass.website"
+    "homepage": "https://kickass.website",
+    "volta": {
+        "node": "16.13.0"
+    }
 }
